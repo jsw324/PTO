@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tallience | Vacation Tracker</title>
+  <%= render 'layouts/rails_default' %>
+  <%= render 'layouts/shim' %>
+</head>
+<body>
+  <%= render 'layouts/header' %>
+  <div class="container">
+    <!-- from Devise tutorial https://www.sitepoint.com/devise-authentication-in-depth/ -->
+    <% flash.each do |key, value| %>
+    <div class="alert alert-<%= key %>">
+      <%= value %>
+    </div>
+    <% end %>
+  </div>
+  <%= yield %>
+  <!-- yield top content from Devise tutorial -->
+  <%= yield :top_content %>
+  <%= render 'layouts/footer' %>
+</body>
+</html>

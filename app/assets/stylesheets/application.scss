@@ -32,3 +32,35 @@
       text-decoration: none;
     }
   }
+
+  .jumbotron {
+    background-image: url('http://static1.squarespace.com/static/55cdf50ee4b07fb58fa0e11d/55f19dd8e4b0e76a82e8a2ab/55f1a005e4b0e76a82e8aff4/1444672677990/?format=1000w');
+    background-size: cover;
+    height: 700px;
+    color: white;
+    text-shadow: black 0.3em 0.3em 0.3em;
+  }
+
+  /* footer */
+
+  .footer-bottom {
+    background-color: #15224f;
+    min-height: 30px;
+    width: 100%;
+}
+.copyright {
+    color: #fff;
+    line-height: 30px;
+    min-height: 30px;
+    padding: 7px 0;
+}
+.design {
+    color: #fff;
+    line-height: 30px;
+    min-height: 30px;
+    padding: 7px 0;
+    text-align: right;
+}
+.design a {
+    color: #fff;
+}

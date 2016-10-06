@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160930194114) do
+ActiveRecord::Schema.define(version: 20161006180056) do
+
+  create_table "time_offs", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "daysGiven"
+    t.integer  "daysTaken"
+    t.datetime "dateTaken"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false

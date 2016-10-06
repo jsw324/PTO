@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  daysGiven: 
+  daysTaken: 
+  dateTaken: 2016-10-06 14:00:56
+
+two:
+  name: MyString
+  daysGiven: 
+  daysTaken: 
+  dateTaken: 2016-10-06 14:00:56

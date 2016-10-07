@@ -41,6 +41,45 @@
     text-shadow: black 0.3em 0.3em 0.3em;
   }
 
+  .profilePic {
+    height: 250px;
+    margin-left: auto;
+    margin-right:auto;
+    margin-top: auto;
+  }
+
+  .daysRemaining {
+    font-size: 250px;
+    height: 250px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0px;
+  }
+
+  .top {
+
+    height: 319px;
+  }
+
+  .txt {
+    font-family: sans-serif;
+    color:blue;
+    font-weight: bolder;
+  }
+
+
+  .row.vdivide [class*='col-']:not(:last-child):after {
+  background: #e0e0e0;
+  width: 1px;
+  content: "";
+  display:block;
+  position: absolute;
+  top:0;
+  bottom: 0;
+  right: 0;
+  min-height: 70px;
+}
+
   /* footer */
 
   .footer-bottom {

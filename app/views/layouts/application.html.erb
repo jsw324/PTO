@@ -7,15 +7,16 @@
 </head>
 <body>
   <%= render 'layouts/header' %>
-  <div class="container">
+  <div class="container-fluid">
     <!-- from Devise tutorial https://www.sitepoint.com/devise-authentication-in-depth/ -->
     <% flash.each do |key, value| %>
     <div class="alert alert-<%= key %>">
       <%= value %>
     </div>
     <% end %>
-  </div>
+
   <%= yield %>
+</div>
   <!-- yield top content from Devise tutorial -->
   <%= yield :top_content %>
   <%= render 'layouts/footer' %>

@@ -1,4 +1,4 @@
-<div class="container-fluid">
+
   <div class="row">
     <img src="https://trademarks.justia.com/media/image.php?serial=85149721" class="img-responive  center-block">
     <div class="jumbotron hero-unit jmbotxt text-center">
@@ -8,11 +8,14 @@
       </h2>
 
       <br>
-      <%=  link_to "Log in", new_user_session_path, class: 'btn btn-primary btn-lg' %>
+      <% if user_signed_in? %>
+        <%= link_to "Track PTO", pto_index_path, class: 'btn btn-primary btn-lg' %>
+      <% else %>
+        <%=  link_to "Log in", new_user_session_path, class: 'btn btn-primary btn-lg' %>
+      <% end %>
       <br><br>
       <h3>
         #TeamTallience - Thank you for all your hard work and dedication.
       </h3>
     </div>
   </div>
-</div>

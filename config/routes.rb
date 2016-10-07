@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  get 'pto/index'
+  get 'days/index'
 
   devise_for :users
+  resources :days
   get 'home/index'
   root 'home#index'
 end

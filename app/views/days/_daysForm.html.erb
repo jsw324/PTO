@@ -6,11 +6,14 @@
           <div class="">
             <%= form_for(@days) do |f| %>
 
-              <p><%= f.label :daysTaken, 'How many days?' %></p>
+              <p><%= f.label :daysTaken, 'Number of Days:' %></p>
               <%= f.text_field :daysTaken, class: 'form-control' %>
               <br>
-              <p><%= f.label :dateTaken, 'Enter the Date' %></p>
+              <p><%= f.label :dateTaken, 'Date:' %></p>
               <%= f.date_field :dateTaken, type: 'date', class: 'form-control' %>
+              <br>
+              <p><%= f.label :note, 'Notes:' %></p>
+              <%= f.text_area :note, class: 'form-control' %>
 
               <br>
               <%= f.submit "SUBMIT REQUEST", class: 'btn btn-primary btn-block'  %>

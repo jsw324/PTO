@@ -63,7 +63,7 @@
 
   .txt {
     font-family: sans-serif;
-    color:blue;
+    color:white;
     font-weight: bolder;
   }
 
@@ -78,6 +78,13 @@
   bottom: 0;
   right: 0;
   min-height: 70px;
+}
+
+.blue {
+  background-color: rgba(0,0,0, 0.4);
+  border-radius: 10px;
+  padding-top: 20px;
+  padding-bottom: 10px;
 }
 
   /* footer */

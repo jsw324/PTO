@@ -1,29 +1,26 @@
-<div class="row">
-<img src="https://trademarks.justia.com/media/image.php?serial=85149721" class="img-responive  center-block">
-</div>
-  <div class="blue">
-    <div class="row vdivide">
-      <div class="col-md-6 top">
-        <img src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAS9AAAAJGY2MTRiYTU0LWI5YWQtNDFjYS04Yjk1LWM2NjJhNzA0NzdjNg.jpg" class="center-block img-circle profilePic">
-        <h1 class="text-center txt">
-          <%= current_user.name %>
-        </h1>
-      </div>
-      <div class="col-md-6 top">
-          <h1 class="text-center daysRemaining txt">18<h1>
-        <h1 class="text-center txt">
-          Days Remaining
-        </h1>
-      </div>
+<div class="blue">
+  <div class="row vdivide">
+    <div class="col-md-6 top">
+      <img src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAS9AAAAJGY2MTRiYTU0LWI5YWQtNDFjYS04Yjk1LWM2NjJhNzA0NzdjNg.jpg" class="center-block img-circle profilePic">
+      <h1 class="text-center txt">
+        <%= current_user.name %>
+      </h1>
     </div>
-    <div class="row">
-      <div class="col-md-12">
-        <br><br>
-        <h1 class="text-center txt">REQUEST DAYS</h1>
-        <br>
-        <%= render 'daysForm' %>
-        <br><br><br>
-      </div>
+    <div class="col-md-6 top">
+        <h1 class="text-center daysRemaining txt">18<h1>
+      <h1 class="text-center txt">
+        Days Remaining
+      </h1>
     </div>
   </div>
+  <div class="row">
+    <div class="col-md-12">
+      <br><br>
+      <h1 class="text-center txt">REQUEST DAYS</h1>
+      <br>
+      <%= render 'daysForm' %>
+      <br><br><br>
+    </div>
+  </div>
+</div>
 </div>

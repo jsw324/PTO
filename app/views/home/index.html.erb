@@ -1,23 +1,19 @@
+<div class="row">
+  <div class="jumbotron hero-unit jmbotxt text-center">
+    <h1>Track your vacation days</h1>
+    <h2>
+      Use this app to submit requests for vacation and track how many days you have left.
+    </h2>
 
-  <div class="row">
-    <img src="https://trademarks.justia.com/media/image.php?serial=85149721" class="img-responive  center-block">
+    <br>
+    <% if user_signed_in? %>
+      <%= link_to "Track PTO", days_index_path, class: 'btn btn-primary btn-lg' %>
+    <% else %>
+      <%=  link_to "Log in", new_user_session_path, class: 'btn btn-primary btn-lg' %>
+    <% end %>
+    <br><br>
+    <h3>
+      #TeamTallience - Thank you for all your hard work and dedication.
+    </h3>
   </div>
-  <div class="row">
-    <div class="jumbotron hero-unit jmbotxt text-center">
-      <h1>Track your vacation days</h1>
-      <h2>
-        Use this app to submit requests for vacation and track how many days you have left.
-      </h2>
-
-      <br>
-      <% if user_signed_in? %>
-        <%= link_to "Track PTO", days_index_path, class: 'btn btn-primary btn-lg' %>
-      <% else %>
-        <%=  link_to "Log in", new_user_session_path, class: 'btn btn-primary btn-lg' %>
-      <% end %>
-      <br><br>
-      <h3>
-        #TeamTallience - Thank you for all your hard work and dedication.
-      </h3>
-    </div>
-  </div>
+</div>

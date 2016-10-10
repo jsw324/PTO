@@ -4,7 +4,9 @@
       <ul class="days">
 
           <div class="txt">
-            <%= form_for(@days) do |f| %>
+            <%= form_for @days, url: {action: "create"} do |f| %>
+
+              <%= f.hidden_field :user_id %>
 
               <p><%= f.label :daysTaken, 'Number of Days:' %></p>
               <%= f.text_field :daysTaken, class: 'form-control' %>

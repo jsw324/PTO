@@ -2,7 +2,7 @@ class DaysController < ApplicationController
   before_filter :authenticate_user!
 
   def index
-    @days = Days.new
+    @days = Days.where(user_id:current_user.id)
   end
 
   def new
@@ -11,7 +11,10 @@ class DaysController < ApplicationController
 
   def create
     @days = Days.new(days_params)
+    @days.user_id = current_user.id
     if @days.save
+      redirect_to new_day_path
+    else
       redirect_to home_index_path
     end
   end
@@ -31,6 +34,6 @@ class DaysController < ApplicationController
 
   private
   def days_params
-   params.require(:name).permit(:daysTaken, :dateTaken, :note)
+   params.require(:days).permit(:daysTaken, :dateTaken, :note, :id)
   end
 end

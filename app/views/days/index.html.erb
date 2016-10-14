@@ -7,16 +7,20 @@
       </h1>
     </div>
     <div class="col-md-6 top">
-        <h1 class="text-center daysRemaining txt">18<h1>
+        <h1 class="text-center daysRemaining txt">
+          <% @days.each do |f| %>
+          <%= f.daysGiven %>
+          <% end %>
+        </h1>
       <h1 class="text-center txt">
-        Days Remaining
+        Days Given
       </h1>
     </div>
   </div>
   <div class="row">
     <div class="col-md-12">
       <br><br>
-      <h1 class="text-center txt">REQUEST DAYS</h1>
+      <h1 class="text-center txt"><%= link_to "Request Days", new_day_path %></h1>
       <br>
 
       <br><br><br>

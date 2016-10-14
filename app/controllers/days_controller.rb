@@ -7,11 +7,13 @@ class DaysController < ApplicationController
 
   def new
     @days = Days.new
+    @day = Days.where(user_id:current_user.id)
   end
 
   def create
     @days = Days.new(days_params)
     @days.user_id = current_user.id
+  
     if @days.save
       redirect_to new_day_path
     else
@@ -34,6 +36,6 @@ class DaysController < ApplicationController
 
   private
   def days_params
-   params.require(:days).permit(:daysTaken, :dateTaken, :note, :id)
+   params.require(:days).permit(:daysTaken, :daysGiven, :dateTaken, :note, :id)
   end
 end

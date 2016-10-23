@@ -15,17 +15,19 @@ class DaysController < ApplicationController
   def create
     @days = Days.new(days_params)
     @days.user_id = current_user.id
+    @days.name = current_user.name
     @employees = Employee.find_by(user_id:current_user.id)
     @employees.daysLeft = @employees.daysLeft - @days.daysTaken
     @employees.save
     if @days.save
-      redirect_to home_index_path
-    else
       redirect_to new_day_path
+    else
+      redirect_to day_path
     end
   end
 
   def show
+    @days = Days.where(user_id:current_user.id)
   end
 
   def edit

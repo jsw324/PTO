@@ -18,7 +18,7 @@
         <% @days.each do |f| %>
         <tr>
           <td><%= current_user.name %></td>
-          <td><%= "test" %></td>
+          <td><%= @employees.daysLeft %></td>
           <td><%= f.daysTaken %></td>
           <td><%= f.dateTaken.strftime("%A %B %d, %Y") %></td>
           <td><%= f.note %></td>

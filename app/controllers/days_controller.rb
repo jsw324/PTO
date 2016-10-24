@@ -28,6 +28,7 @@ class DaysController < ApplicationController
 
   def show
     @days = Days.where(user_id:current_user.id)
+    @employees = Employee.find_by(user_id:current_user.id)
   end
 
   def edit

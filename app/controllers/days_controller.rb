@@ -3,22 +3,19 @@ class DaysController < ApplicationController
 
   def index
     @days = Days.where(user_id:current_user.id)
-    @employees = Employee.where(user_id:current_user.id)
   end
 
   def new
-    @days = Days.new
     @day = Days.where(user_id:current_user.id)
-    @employees = Employee.where(user_id:current_user.id)
+    @days = Days.new
   end
 
   def create
     @days = Days.new(days_params)
     @days.user_id = current_user.id
     @days.name = current_user.name
-    @employees = Employee.find_by(user_id:current_user.id)
-    @employees.daysLeft = @employees.daysLeft - @days.daysTaken
-    @employees.save
+    @day = Days.where(user_id:current_user.id)
+    subtract(@day.daysLeft, @days.daysTaken)
     if @days.save
       redirect_to new_day_path
     else
@@ -28,7 +25,6 @@ class DaysController < ApplicationController
 
   def show
     @days = Days.where(user_id:current_user.id)
-    @employees = Employee.find_by(user_id:current_user.id)
   end
 
   def edit
@@ -42,10 +38,8 @@ class DaysController < ApplicationController
 
 
   private
-  def employee_params
-    params.require(:user_id).permit(:daysLeft)
-  end
+
   def days_params
-   params.require(:days).permit(:daysTaken, :daysGiven, :dateTaken, :note, :id)
+   params.require(:days).permit(:daysTaken, :daysLeft, :dateTaken, :note, :id)
   end
 end

@@ -1,7 +1,8 @@
 class Days < ActiveRecord::Base
-  belongs_to :employees
-  accepts_nested_attributes_for :employees
+  belongs_to :users
 
-  
-
+  def subtract(left, taken)
+    left -= taken
+    return left
+  end
 end

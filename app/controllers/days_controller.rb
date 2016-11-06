@@ -14,8 +14,9 @@ class DaysController < ApplicationController
     @days = Days.new(days_params)
     @days.user_id = current_user.id
     @days.name = current_user.name
-    @day = Days.where(user_id:current_user.id)
-    subtract(@day.daysLeft, @days.daysTaken)
+    @day = Days.where(user_id:current_user.id).last
+    @days.daysLeft = @day.daysLeft - @days.daysTaken.to_i
+    @day.save
     if @days.save
       redirect_to new_day_path
     else

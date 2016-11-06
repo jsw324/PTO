@@ -6,7 +6,7 @@ class DaysController < ApplicationController
   end
 
   def new
-    @day = Days.where(user_id:current_user.id)
+    @day = Days.where(user_id:current_user.id).last
     @days = Days.new
   end
 

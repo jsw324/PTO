@@ -2,7 +2,7 @@ class DaysController < ApplicationController
   before_filter :authenticate_user!
 
   def index
-    @days = Days.where(user_id:current_user.id)
+    @days = Days.where(user_id:current_user.id).last
   end
 
   def new
@@ -26,6 +26,10 @@ class DaysController < ApplicationController
 
   def show
     @days = Days.where(user_id:current_user.id)
+  end
+
+  def admin
+    @days = Days.all
   end
 
   def edit

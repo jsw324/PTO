@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   resources :days
   get 'home/index'
   root 'home#index'
+  get 'days/show'
+
 
   post 'days/new'
 end

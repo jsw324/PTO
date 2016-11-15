@@ -29,7 +29,12 @@ class DaysController < ApplicationController
   end
 
   def admin
-    @days = Days.all
+    @user = current_user
+    if @user.admin == true
+      @days = Days.all
+    else
+      redirect_to new_day_path
+    end
   end
 
   def edit

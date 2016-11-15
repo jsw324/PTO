@@ -2,7 +2,9 @@ Rails.application.routes.draw do
   get 'days/index'
 
   devise_for :users
-  resources :days
+  resources :days do
+    get :admin, on: :collection
+  end
   get 'home/index'
   root 'home#index'
   get 'days/show'

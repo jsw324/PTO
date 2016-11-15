@@ -28,9 +28,7 @@ class DaysController < ApplicationController
     @days = Days.where(user_id:current_user.id)
   end
 
-  def admin
-    @days = Days.all
-  end
+   
 
   def edit
   end

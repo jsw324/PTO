@@ -26,12 +26,14 @@ class DaysController < ApplicationController
 
   def show
     @days = Days.where(user_id:current_user.id)
+    @users = User.all
   end
 
   def admin
     @user = current_user
     if @user.admin == true
       @days = Days.all
+      @users = User.all
     else
       redirect_to new_day_path
     end

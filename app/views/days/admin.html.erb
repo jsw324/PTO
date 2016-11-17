@@ -4,7 +4,8 @@
     <span class="caret"></span></button>
     <ul class="dropdown-menu">
       <% @users.each do |f| %>
-      <li><%= f.name %></li>
+
+      <li><%= link_to f.name, adminShow_days_path(user_id:f.id) %></li>
       <% end %>
     </ul>
   </div>
@@ -12,7 +13,7 @@
 
 
   <div class="table-responsive">
-    <table class="table">
+    <table class="table table-striped table-hover">
       <thead>
         <tr>
           <th>Name</th>

@@ -39,6 +39,15 @@ class DaysController < ApplicationController
     end
   end
 
+  def adminShow
+    @user = current_user
+    if @user.admin == true
+      @days = Days.where(id_param)
+    else
+      redirect_to new_day_path
+    end
+  end
+
   def edit
   end
 
@@ -53,5 +62,9 @@ class DaysController < ApplicationController
 
   def days_params
    params.require(:days).permit(:daysTaken, :daysLeft, :dateTaken, :note, :id)
+  end
+
+  def id_param
+    params.permit(:id, :user_id)
   end
 end

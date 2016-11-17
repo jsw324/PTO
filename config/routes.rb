@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   devise_for :users
   resources :days do
     get :admin, on: :collection
+    get :adminShow, on: :collection
   end
   get 'home/index'
   root 'home#index'

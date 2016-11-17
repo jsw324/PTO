@@ -43,6 +43,7 @@ class DaysController < ApplicationController
     @user = current_user
     if @user.admin == true
       @days = Days.where(id_param)
+      @users = User.all
     else
       redirect_to new_day_path
     end

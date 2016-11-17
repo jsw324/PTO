@@ -1,10 +1,20 @@
-<h1 class="text-center">Days Taken - Test</h1>
 
+<h1 class="text-center">Days Taken - <%= @days.last.name %></h1>
+<div class="dropdown center-block">
+  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Pick Employee
+  <span class="caret"></span></button>
+  <ul class="dropdown-menu">
+    <% @users.each do |f| %>
+
+    <li><%= link_to f.name, adminShow_days_path(user_id:f.id) %></li>
+    <% end %>
+  </ul>
+</div>
 <div class="container">
 
 
   <div class="table-responsive">
-    <table class="table">
+    <table class="table table-striped table-hover">
       <thead>
         <tr>
           <th>Name</th>

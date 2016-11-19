@@ -50,13 +50,22 @@ class DaysController < ApplicationController
   end
 
   def edit
-  end
+      @days = Days.find_by("id" => id_param[:id])
+    end
 
-  def update
-  end
+    def update
+      @days = Days.find_by("id" => id_param[:id])
+      if @days.update(note_params)
+        redirect_to days_path
+      else
+        redirect_to days_path
+      end
+    end
 
-  def destroy
-  end
+    def destroy
+      @days = Days.destroy(params[:id])
+      redirect_to @days
+    end
 
 
   private

@@ -1,0 +1,32 @@
+
+<div class="container">
+
+
+  <div class="table-responsive">
+    <table class="table table-striped table-hover">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Days Left</th>
+          <th>Requested Days</th>
+          <th>Requested Date</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @days.each do |f| %>
+        <tr>
+          <td><%= f.name %></td>
+          <td><%= f.daysLeft %></td>
+          <td><%= f.daysTaken %></td>
+          <td><%= f.dateTaken.strftime("%A %B %d, %Y") %></td>
+          <td><%= f.note %></td>
+          <td><%= link_to "edit", edit_day_path(f.id) %></td>
+        </tr>
+        <% end %>
+
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -55,7 +55,7 @@ class DaysController < ApplicationController
 
     def update
       @days = Days.find_by("id" => id_param[:id])
-      if @days.update(note_params)
+      if @days.update(days_params)
         redirect_to days_path
       else
         redirect_to days_path

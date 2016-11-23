@@ -7,7 +7,7 @@
 
     <br>
     <% if user_signed_in? %>
-      <%= link_to "Track PTO", days_index_path, class: 'btn btn-primary btn-lg' %>
+      <%= link_to "Track PTO", new_day_path, class: 'btn btn-primary btn-lg' %>
     <% else %>
       <%=  link_to "Log in", new_user_session_path, class: 'btn btn-primary btn-lg' %>
     <% end %>

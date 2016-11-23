@@ -22,7 +22,10 @@
           <td><%= f.daysTaken %></td>
           <td><%= f.dateTaken.strftime("%A %B %d, %Y") %></td>
           <td><%= f.note %></td>
-          <td><%= link_to "edit", edit_day_path(f.id) %></td>
+          <% if current_user.admin == true %>
+            <td><%= link_to "edit", edit_day_path(f.id) %></td>
+            <td><%= link_to "delete", day_path(f.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+          <% end %>
         </tr>
         <% end %>
 

@@ -64,7 +64,12 @@ class DaysController < ApplicationController
 
     def destroy
       @days = Days.destroy(params[:id])
-      redirect_to @days
+      ## need to add back deleted days.
+      @day = Days.last
+      @day.daysLeft += @days.daysTaken
+      if @days.save
+        redirect_to @days
+      end
     end
 
 

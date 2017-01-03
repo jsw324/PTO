@@ -18,7 +18,7 @@ class DaysController < ApplicationController
     @days.daysLeft = @day.daysLeft - @days.daysTaken.to_i
     @day.save
     if @days.save
-      redirect_to new_day_path
+      redirect_to days_show_path
     else
       redirect_to day_path
     end
@@ -56,7 +56,7 @@ class DaysController < ApplicationController
     def update
       @days = Days.find_by("id" => id_param[:id])
       if @days.update(days_params)
-        redirect_to days_path
+        redirect_to days_show_path
       else
         redirect_to days_path
       end

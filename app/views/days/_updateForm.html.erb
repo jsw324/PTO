@@ -4,7 +4,7 @@
       <ul class="days">
 
           <div class="txt">
-            <%= form_for @days, url: { action: "create" } do |f| %>
+            <%= form_for @days, url: { action: "update" } do |f| %>
 
               <%= f.hidden_field :user_id, :value => current_user.id %>
               <%= f.hidden_field :name, :value => current_user.email %>

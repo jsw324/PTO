@@ -18,8 +18,15 @@
         <% @days.each do |f| %>
         <tr>
           <td><%= f.name %></td>
-          <td><%= f.daysLeft %></td>
-          <td><%= f.daysTaken %></td>
+          <!--
+          <% if f.daysLeft % 1 == 0 %>
+          <td><%= f.daysLeft.to_i %>
+          <% else %>
+          <%= f.daysLeft %></td>
+          <% end %>
+        -->
+          <td><%= Fractional.new(f.daysLeft).to_s(mixed_number: true) %></td>
+          <td><%= Fractional.new(f.daysTaken).to_s(mixed_number: true) %></td>
           <td><%= f.dateTaken.strftime("%A %B %d, %Y") %></td>
           <td><%= f.note %></td>
           <% if current_user.admin == true %>

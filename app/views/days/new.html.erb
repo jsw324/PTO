@@ -9,7 +9,7 @@
     <div class="col-md-6 top">
         <h1 class="text-center daysRemaining txt">
 
-          <%= @day.daysLeft %>
+          <%= Fractional.new(@day.daysLeft).to_s(mixed_number: true) %>
 
         </h1>
       <h1 class="text-center txt">

@@ -9,14 +9,14 @@
               <%= f.hidden_field :user_id, :value => current_user.id %>
               <%= f.hidden_field :name, :value => current_user.email %>
 
-              <p><%= f.label :daysTaken, 'Number of Days:' %></p>
+              <p><%= f.label :daysTaken, 'Number of Days:', style: 'color:black' %></p>
               <%= f.text_field :daysTaken, class: 'form-control' %>
               <br>
 
-              <p><%= f.label :dateTaken, 'Date:' %></p>
+              <p><%= f.label :dateTaken, 'Date:', style: 'color:black' %></p>
               <%= f.date_field :dateTaken, type: 'date', class: 'form-control' %>
               <br>
-              <p><%= f.label :note, 'Notes:' %></p>
+              <p><%= f.label :note, 'Notes:', style: 'color:black' %></p>
               <%= f.text_area :note, class: 'form-control' %>
 
               <br>

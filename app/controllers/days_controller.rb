@@ -15,7 +15,7 @@ class DaysController < ApplicationController
     @days.user_id = current_user.id
     @days.name = current_user.name
     @day = Days.where(user_id:current_user.id).last
-    @days.daysLeft = @day.daysLeft - @days.daysTaken.to_i
+    @days.daysLeft = @day.daysLeft - @days.daysTaken
     @day.save
     if @days.save
       redirect_to days_show_path
@@ -55,6 +55,8 @@ class DaysController < ApplicationController
 
     def update
       @days = Days.find_by("id" => id_param[:id])
+      @day = Days.where(user_id:current_user.id).last
+      @days.daysLeft = @day.daysLeft - @days.daysTaken
       if @days.update(days_params)
         redirect_to days_show_path
       else
@@ -68,7 +70,7 @@ class DaysController < ApplicationController
       @day = Days.last
       @day.daysLeft += @days.daysTaken
       if @days.save
-        redirect_to @days
+        redirect_to days_show_path
       end
     end
 
